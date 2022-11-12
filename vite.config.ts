@@ -13,18 +13,25 @@ export default defineConfig({
     vue(),
     AutoImport({
       dts: true,
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
       imports: ['vue', 'vue-router']
     }),
     Components({
       dts: false,
-      resolvers: [ElementPlusResolver()]
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })]
     }),
     visualizer({ open: true })
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/assets/element-theme.scss" as *;`
+      }
     }
   }
 })

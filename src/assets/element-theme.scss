@@ -1,0 +1,19 @@
+$primary-color: #2c3852;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $primary-color
+    )
+  ),
+  $dialog: (
+    'border-radius': var(--el-border-radius-round)
+  ),
+  $input: (
+    'border-radius': var(--el-border-radius-round)
+  )
+);
+
+:root {
+  --el-text-color-regular: $primary-color;
+}
