@@ -17,7 +17,7 @@ export default defineConfig({
       imports: ['vue', 'vue-router']
     }),
     Components({
-      dts: true,
+      dts: false,
       resolvers: [ElementPlusResolver()]
     }),
     visualizer({ open: true })
