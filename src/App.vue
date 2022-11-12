@@ -4,7 +4,9 @@ import LoginDialog from './features/Auth/components/LoginDialog.vue'
 
 <template>
   <LoginDialog />
-  <RouterView />
+  <ElContainer class="container mx-auto max-w-7xl" direction="vertical"
+    ><RouterView
+  /></ElContainer>
 </template>
 
 <style scoped></style>

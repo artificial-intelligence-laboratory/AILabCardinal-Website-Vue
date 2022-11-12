@@ -1,3 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomePageTitle from './HomePageTitle.vue'
+import HomePageMenu from './HomePageMenu.vue'
+</script>
 
-<template>Home Page</template>
+<template>
+  <ElHeader>
+    <HomePageTitle />
+  </ElHeader>
+  <ElMain><HomePageMenu /> </ElMain>
+</template>

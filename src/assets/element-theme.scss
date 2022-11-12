@@ -11,6 +11,10 @@ $primary-color: #2c3852;
   ),
   $input: (
     'border-radius': var(--el-border-radius-round)
+  ),
+  $header: (
+    'padding': 2rem 1rem,
+    'height': auto
   )
 );
 
