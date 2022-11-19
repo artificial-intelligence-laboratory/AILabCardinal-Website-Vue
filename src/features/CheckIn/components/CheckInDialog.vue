@@ -15,7 +15,7 @@ const selectModel = ref('3.5')
 <template>
   <ElDialog v-model="isDialogOpen" center width="22rem">
     <template #header>
-      <h2 class="text-lg">实验室签到</h2>
+      <h2 class="font-ysbth text-lg">实验室签到</h2>
     </template>
     <ElForm class="checkInForm" size="large" label-position="top">
       <ElFormItem label="任务"
@@ -30,7 +30,11 @@ const selectModel = ref('3.5')
         </ElSelect>
       </ElFormItem>
       <ElFormItem>
-        <ElButton native-type="submit" class="w-full" type="primary" round
+        <ElButton
+          native-type="submit"
+          class="w-full text-sm"
+          type="primary"
+          round
           >签到</ElButton
         ></ElFormItem
       >

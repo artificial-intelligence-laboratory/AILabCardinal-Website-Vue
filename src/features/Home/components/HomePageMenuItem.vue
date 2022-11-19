@@ -14,8 +14,10 @@ withDefaults(defineProps<HomePageMenuItemProps>(), { path: '' })
     <RouterLink :to="path">
       <ElCard class="el-card" shadow="hover">
         <ElImage :src="iconSrc" :alt="name" class="h-12 w-12" />
-        <p class="text-2xl">{{ name }}</p>
-        <p v-if="isDeveloping" class="absolute bottom-4 text-sm">正在开发</p>
+        <p class="font-ysbth text-2xl">{{ name }}</p>
+        <p v-if="isDeveloping" class="absolute bottom-[10%] text-sm"
+          >正在开发</p
+        >
       </ElCard></RouterLink
     >
   </li>

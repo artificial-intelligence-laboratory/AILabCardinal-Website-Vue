@@ -8,6 +8,6 @@ const [isDialogOpen, toggle] = useToggle()
 <template>
   <CheckInDialog v-model="isDialogOpen" />
   <ElButton size="large" @click="toggle">
-    <p class="font-normal text-base">实验室签到</p>
+    <p class="font-ysbth font-normal text-base">实验室签到</p>
   </ElButton>
 </template>

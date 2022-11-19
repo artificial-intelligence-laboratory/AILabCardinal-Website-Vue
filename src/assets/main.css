@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  @apply h-full;
+@font-face {
+  /* 优设标题黑  */
+  font-family: YouSheBiaoTiHei;
+  src: url('./fonts/YouSheBiaoTiHei.ttf') format('opentype');
 }
 
-#app {
-  @apply h-full bg-background text-primary;
+@layer base {
+  html {
+    @apply font-simhei;
+  }
+
+  html,
+  body {
+    @apply h-full;
+  }
+
+  #app {
+    @apply h-full bg-background text-primary;
+  }
 }

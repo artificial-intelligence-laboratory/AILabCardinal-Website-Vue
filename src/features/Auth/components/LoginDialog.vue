@@ -31,6 +31,7 @@ const handleSubmit = async () => {
 
 <template>
   <ElDialog
+    class="loginDialog"
     v-model="isDialogOpen"
     center
     width="22rem"
@@ -72,7 +73,7 @@ const handleSubmit = async () => {
           >登录</ElButton
         ></ElFormItem
       >
-      <p class="text-zinc-400 text-xs"
+      <p class="font-deng text-zinc-400 text-sm"
         >本系统仅限模式识别与人工智能实验室成员使用</p
       >
     </ElForm>
@@ -80,7 +81,7 @@ const handleSubmit = async () => {
 </template>
 
 <style>
-.el-dialog > .el-dialog__header {
-  margin-right: 0;
+.loginDialog > .el-dialog__header {
+  @apply mr-0 font-ysbth;
 }
 </style>

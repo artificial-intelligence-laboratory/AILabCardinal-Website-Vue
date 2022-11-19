@@ -4,7 +4,7 @@ import backIcon from './back.png'
 
 <template>
   <ElHeader>
-    <ElPageHeader @back="$router.back">
+    <ElPageHeader class="font-ysbth" @back="$router.back">
       <template #icon>
         <ElButton class="backButton">
           <ElImage :src="backIcon" class="w-8" />
