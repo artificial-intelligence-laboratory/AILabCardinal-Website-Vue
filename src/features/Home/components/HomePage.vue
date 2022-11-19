@@ -7,13 +7,13 @@ import LoginModal from '@/features/Auth/components/LoginModal.vue'
 
 <template>
   <LoginModal />
-  <ElHeader>
+  <NLayoutHeader>
     <HomePageTitle />
-  </ElHeader>
-  <ElMain>
-    <div class="mt-8 space-y-5">
+  </NLayoutHeader>
+  <NLayoutContent>
+    <div class="mt-10 space-y-5">
       <CheckInButton />
       <HomePageMenu
     /></div>
-  </ElMain>
+  </NLayoutContent>
 </template>

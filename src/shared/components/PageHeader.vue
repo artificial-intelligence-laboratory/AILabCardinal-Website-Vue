@@ -3,7 +3,7 @@ import backIcon from './back.png'
 </script>
 
 <template>
-  <NLayoutHeader class="px-4 py-8">
+  <NLayoutHeader>
     <NPageHeader @back="$router.back">
       <template #back>
         <NButton class="h-12 w-12 p-0">

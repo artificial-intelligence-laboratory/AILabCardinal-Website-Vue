@@ -7,7 +7,6 @@ useRequireAuth()
 
 <template>
   <NConfigProvider :theme-overrides="naiveUIThemeOverrides">
-    <ElContainer class="container mx-auto max-w-7xl" direction="vertical"
-      ><RouterView /></ElContainer
+    <NLayout class="container mx-auto max-w-7xl"><RouterView /></NLayout
   ></NConfigProvider>
 </template>

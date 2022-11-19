@@ -12,23 +12,22 @@ withDefaults(defineProps<HomePageMenuItemProps>(), { path: '' })
 <template>
   <li class="relative aspect-square last:col-span-3 last:aspect-auto">
     <RouterLink :to="path">
-      <ElCard class="el-card" shadow="hover">
-        <ElImage :src="iconSrc" :alt="name" class="h-12 w-12" />
+      <NCard class="menuItem" hoverable>
+        <NImage :src="iconSrc" :alt="name" width="48" />
         <p class="font-ysbth text-2xl">{{ name }}</p>
         <p v-if="isDeveloping" class="absolute bottom-[10%] text-sm"
           >正在开发</p
         >
-      </ElCard></RouterLink
+      </NCard></RouterLink
     >
   </li>
 </template>
 
 <style scoped>
-.el-card {
+.menuItem {
   @apply grid h-full place-items-center;
 }
-
-.el-card > :deep(.el-card__body) {
+.menuItem > :deep(.n-card__content) {
   @apply grid place-items-center gap-y-3;
 }
 </style>
