@@ -2,11 +2,11 @@
 import HomePageTitle from './HomePageTitle.vue'
 import HomePageMenu from './HomePageMenu.vue'
 import CheckInButton from '@/features/CheckIn/components/CheckInButton.vue'
-import LoginDialog from '@/features/Auth/components/LoginDialog.vue'
+import LoginModal from '@/features/Auth/components/LoginModal.vue'
 </script>
 
 <template>
-  <LoginDialog />
+  <LoginModal />
   <ElHeader>
     <HomePageTitle />
   </ElHeader>
