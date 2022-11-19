@@ -5,7 +5,8 @@ useRequireAuth()
 </script>
 
 <template>
-  <ElContainer class="container mx-auto max-w-7xl" direction="vertical"
-    ><RouterView
-  /></ElContainer>
+  <NConfigProvider>
+    <ElContainer class="container mx-auto max-w-7xl" direction="vertical"
+      ><RouterView /></ElContainer
+  ></NConfigProvider>
 </template>
