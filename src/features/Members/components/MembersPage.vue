@@ -5,10 +5,10 @@ import MembersList from './MembersList.vue'
 
 <template>
   <PageHeader />
-  <ElMain>
+  <NLayoutContent>
     <div class="space-y-14">
       <MembersList title="本届" />
       <MembersList title="往届"
     /></div>
-  </ElMain>
+  </NLayoutContent>
 </template>
