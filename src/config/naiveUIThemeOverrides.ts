@@ -1,5 +1,6 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { borderRadius } from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
 
 const naiveUIThemeOverrides: GlobalThemeOverrides = {
   common: {
@@ -9,6 +10,10 @@ const naiveUIThemeOverrides: GlobalThemeOverrides = {
   },
   Input: {
     borderRadius: borderRadius.full
+  },
+  Button: { color: colors.white },
+  Layout: {
+    headerColor: colors.transparent
   }
 }
 
