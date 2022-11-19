@@ -50,6 +50,7 @@ const handleSubmit = async () => {
     >
     <ElForm
       ref="loginFormRef"
+      class="loginForm"
       :model="loginFormModel"
       :rules="loginFormRules"
       @submit.prevent="handleSubmit"
@@ -69,11 +70,11 @@ const handleSubmit = async () => {
           native-type="submit"
           class="w-full"
           type="primary"
-          round
-          >登录</ElButton
-        ></ElFormItem
+          round>
+          <p class="text-sm">登录</p>
+        </ElButton></ElFormItem
       >
-      <p class="font-deng text-zinc-400 text-sm"
+      <p class="font-deng text-zinc-400"
         >本系统仅限模式识别与人工智能实验室成员使用</p
       >
     </ElForm>
@@ -83,5 +84,13 @@ const handleSubmit = async () => {
 <style>
 .loginDialog > .el-dialog__header {
   @apply mr-0 font-ysbth;
+}
+
+.loginForm .el-input__inner {
+  @apply text-center;
+}
+
+.loginForm .el-form-item__error {
+  @apply w-full text-center;
 }
 </style>

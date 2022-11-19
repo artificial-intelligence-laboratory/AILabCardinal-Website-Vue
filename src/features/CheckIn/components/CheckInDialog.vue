@@ -30,13 +30,9 @@ const selectModel = ref('3.5')
         </ElSelect>
       </ElFormItem>
       <ElFormItem>
-        <ElButton
-          native-type="submit"
-          class="w-full text-sm"
-          type="primary"
-          round
-          >签到</ElButton
-        ></ElFormItem
+        <ElButton native-type="submit" class="w-full" type="primary" round>
+          <p class="text-sm">签到</p>
+        </ElButton></ElFormItem
       >
     </ElForm>
   </ElDialog>
