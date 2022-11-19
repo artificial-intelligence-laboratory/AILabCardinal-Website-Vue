@@ -13,7 +13,7 @@ const selectModel = ref('3.5')
 </script>
 
 <template>
-  <ElDialog v-model="isDialogOpen" center width="22rem">
+  <ElDialog v-model="isDialogOpen" destroy-on-close center width="22rem">
     <template #header>
       <h2 class="font-ysbth text-lg">实验室签到</h2>
     </template>

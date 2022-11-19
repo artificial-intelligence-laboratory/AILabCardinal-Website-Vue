@@ -36,6 +36,7 @@ const handleSubmit = async () => {
     center
     width="22rem"
     :show-close="false"
+    destroy-on-close
     :close-on-click-modal="false">
     <template #header>
       <p class="text-lg">模式识别与人工智能实验室</p>
