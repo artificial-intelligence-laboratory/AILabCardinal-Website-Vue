@@ -23,7 +23,7 @@ withDefaults(defineProps<HomePageMenuItemProps>(), { path: '' })
 
 <style scoped>
 .menuItem {
-  @apply grid h-full place-items-center;
+  @apply grid h-full place-items-center hover:bg-primary hover:text-white;
 }
 .menuItem > :deep(.n-card__content) {
   @apply grid place-items-center gap-y-3;
