@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import type { Icon } from '@icon-park/vue-next/lib/runtime'
+import MenuItemIcon from './MenuItemIcon'
 export interface HomePageMenuItemProps {
   name: string
-  iconSrc: string
+  icon: Icon
   path?: string
   isDeveloping?: true
 }
@@ -12,7 +14,7 @@ withDefaults(defineProps<HomePageMenuItemProps>(), { path: '' })
 <template>
   <RouterLink class="relative h-full" :to="path">
     <NCard class="menuItem" hoverable>
-      <NImage :src="iconSrc" :alt="name" width="48" />
+      <MenuItemIcon :icon="icon" />
       <p class="font-ysbth text-2xl">{{ name }}</p>
       <p v-if="isDeveloping" class="absolute bottom-[10%] text-sm">正在开发</p>
     </NCard></RouterLink

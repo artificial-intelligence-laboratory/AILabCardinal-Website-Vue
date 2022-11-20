@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BrandGithubIcon } from 'vue-tabler-icons'
+import { GithubOne } from '@icon-park/vue-next'
 import { collegeManAvatar } from '../assets'
 </script>
 
@@ -17,11 +17,9 @@ import { collegeManAvatar } from '../assets'
           <p class="text-xs">2020级 Java后端</p>
         </div>
       </div>
-      <a class="my-auto" href="https://github.com"
-        ><BrandGithubIcon
-          class="rounded-full bg-primary stroke-white p-1"
-          size="30"
-      /></a>
+      <a class="my-auto" href="https://github.com">
+        <GithubOne fill="white" size="32" />
+      </a>
     </NCard>
   </li>
 </template>
@@ -29,5 +27,8 @@ import { collegeManAvatar } from '../assets'
 <style scoped>
 .listItem > :deep(.n-card__content) {
   @apply flex justify-between py-2.5 px-4;
+}
+.listItem :deep(.i-icon > svg) {
+  @apply rounded-full bg-primary p-1;
 }
 </style>

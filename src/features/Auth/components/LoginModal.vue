@@ -34,12 +34,12 @@ const handleSubmit = async () => {
 <template>
   <NModal v-model:show="isDialogOpen">
     <NCard class="w-[22rem] text-center" role="dialog" aria-modal="true">
-      <p class="text-lg">模式识别与人工智能实验室</p>
-      <p class="break-normal text-xs"
+      <p class="font-ysbth text-lg">模式识别与人工智能实验室</p>
+      <p class="break-normal font-ysbth text-xs"
         >(AILab) Pattern Recognition and artificial intelligence Laboratory</p
       >
       <p
-        class="my-8 underline decoration-primary decoration-4 underline-offset-8 text-base"
+        class="my-8 underline decoration-primary decoration-4 underline-offset-8 text-sm"
         >登录账号</p
       >
       <NForm

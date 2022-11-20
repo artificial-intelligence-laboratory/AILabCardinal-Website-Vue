@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.4.2",
     "@lukemorales/query-key-factory": "^1.0.3",
     "@tanstack/vue-query": "^4.15.0",
     "@vueuse/core": "^9.5.0",
@@ -17,8 +18,7 @@
     "naive-ui": "^2.33.5",
     "pinia": "^2.0.23",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5",
-    "vue-tabler-icons": "^2.16.0"
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
