@@ -9,16 +9,11 @@
 }
 
 @layer base {
-  html {
-    @apply font-simhei;
-  }
-
-  html,
-  body {
-    @apply h-full;
+  :where(:root) {
+    @apply grid h-full;
   }
 
   #app {
-    @apply h-full bg-background text-primary;
+    @apply h-full bg-background font-simhei text-primary;
   }
 }

@@ -7,12 +7,15 @@ module.exports = {
     extend: {
       colors: { primary: '#2c3852', background: '#e9e7eb' },
       fontFamily: {
-        ysbth: ['YouSheBiaoTiHei', ...defaultTheme.fontFamily.sans] /* 优设标题黑  */,
+        ysbth: [
+          'YouSheBiaoTiHei',
+          ...defaultTheme.fontFamily.sans
+        ] /* 优设标题黑  */,
         simhei: ['SimHei', ...defaultTheme.fontFamily.sans] /* 黑体  */,
         deng: ['DengXian', ...defaultTheme.fontFamily.sans] /* 等线 Regular*/
       }
     }
   },
-  corePlugins: { fontSize: false },
+  corePlugins: { preflight: false, fontSize: false },
   plugins: [require('tailwindcss-fluid-type')]
 }

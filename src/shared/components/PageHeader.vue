@@ -3,25 +3,21 @@ import backIcon from './back.png'
 </script>
 
 <template>
-  <ElHeader>
-    <ElPageHeader class="font-ysbth" @back="$router.back">
-      <template #icon>
-        <ElButton class="backButton">
-          <ElImage :src="backIcon" class="w-8" />
-        </ElButton>
+  <NLayoutHeader>
+    <NPageHeader @back="$router.back">
+      <template #back>
+        <NButton class="h-12 w-12 p-0">
+          <NImage :src="backIcon" width="32" />
+        </NButton>
       </template>
       <template #title>
-        <p class="ml-6 font-normal">
+        <p class="ml-5 font-ysbth text-primary">
           <span class="text-2xl">{{ $route.meta.title }}</span>
           <span class="text-sm">/{{ $route.meta.subTitle }}</span>
-        </p>
-      </template>
-    </ElPageHeader></ElHeader
-  >
+        </p></template
+      >
+    </NPageHeader>
+  </NLayoutHeader>
 </template>
 
-<style scoped>
-.backButton {
-  @apply aspect-square p-6;
-}
-</style>
+<style scoped></style>

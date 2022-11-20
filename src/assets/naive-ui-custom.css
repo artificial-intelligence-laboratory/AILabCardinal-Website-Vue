@@ -1,0 +1,31 @@
+.n-input__input > .n-input__input-el {
+  @apply font-deng;
+}
+
+.n-base-selection-input__content {
+  @apply font-deng;
+}
+
+.n-input:has(input.n-input__input-el) {
+  @apply rounded-full;
+}
+
+.n-input:has(textarea.n-input__textarea-el) {
+  @apply rounded-2xl;
+}
+
+.n-layout-header {
+  @apply px-4 py-8;
+}
+
+.n-layout-content {
+  @apply p-5;
+}
+
+.n-card.n-modal {
+  @apply rounded-3xl;
+}
+
+.n-avatar {
+  @apply flex-shrink-0;
+}

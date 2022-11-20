@@ -2,18 +2,18 @@
 import HomePageTitle from './HomePageTitle.vue'
 import HomePageMenu from './HomePageMenu.vue'
 import CheckInButton from '@/features/CheckIn/components/CheckInButton.vue'
-import LoginDialog from '@/features/Auth/components/LoginDialog.vue'
+import LoginModal from '@/features/Auth/components/LoginModal.vue'
 </script>
 
 <template>
-  <LoginDialog />
-  <ElHeader>
+  <LoginModal />
+  <NLayoutHeader>
     <HomePageTitle />
-  </ElHeader>
-  <ElMain>
-    <div class="mt-8 space-y-5">
+  </NLayoutHeader>
+  <NLayoutContent>
+    <div class="mt-10 space-y-5">
       <CheckInButton />
       <HomePageMenu
     /></div>
-  </ElMain>
+  </NLayoutContent>
 </template>

@@ -5,9 +5,10 @@ import { collegeManAvatar } from '../assets'
 
 <template>
   <li>
-    <ElCard class="el-card" shadow="hover">
+    <NCard class="listItem" hoverable>
       <div class="flex items-center gap-x-4">
-        <ElAvatar
+        <NAvatar
+          round
           class="ring ring-primary"
           :size="48"
           :src="collegeManAvatar" />
@@ -16,17 +17,17 @@ import { collegeManAvatar } from '../assets'
           <p class="text-xs">2020级 Java后端</p>
         </div>
       </div>
-      <ElLink href="https://github.com" :underline="false"
+      <a class="my-auto" href="https://github.com"
         ><BrandGithubIcon
           class="rounded-full bg-primary stroke-white p-1"
           size="30"
-      /></ElLink>
-    </ElCard>
+      /></a>
+    </NCard>
   </li>
 </template>
 
 <style scoped>
-.el-card > :deep(.el-card__body) {
+.listItem > :deep(.n-card__content) {
   @apply flex justify-between py-2.5 px-4;
 }
 </style>
