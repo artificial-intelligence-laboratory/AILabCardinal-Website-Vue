@@ -2,13 +2,8 @@
 
 <template>
   <RouterLink to="/">
-    <ElButton class="sitesAsideItem" size="large">
-      <p class="text-base"><slot /></p> </ElButton
+    <NButton class="w-full" type="primary" size="large"><slot /></NButton
   ></RouterLink>
 </template>
 
-<style scoped>
-.sitesAsideItem {
-  @apply w-full border-0;
-}
-</style>
+<style scoped></style>

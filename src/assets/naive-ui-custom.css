@@ -21,3 +21,11 @@
 .n-layout-content {
   @apply p-5;
 }
+
+.n-card.n-modal {
+  @apply rounded-3xl;
+}
+
+.n-avatar {
+  @apply flex-shrink-0;
+}

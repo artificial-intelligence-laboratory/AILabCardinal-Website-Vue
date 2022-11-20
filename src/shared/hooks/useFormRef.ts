@@ -1,7 +1,7 @@
-import type { FormInstance } from 'element-plus'
+import type { FormInst } from 'naive-ui'
 
 const useFormRef = () => {
-  const formRef = ref<FormInstance>(null!)
+  const formRef = ref<FormInst>(null!)
 
   return formRef
 }

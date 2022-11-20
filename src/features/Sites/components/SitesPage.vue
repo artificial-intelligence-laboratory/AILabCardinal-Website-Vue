@@ -6,8 +6,8 @@ import SitesList from './SitesList.vue'
 
 <template>
   <PageHeader />
-  <ElContainer>
+  <NLayout has-sider>
     <SitesAside />
-    <ElMain><SitesList /></ElMain
-  ></ElContainer>
+    <NLayoutContent><SitesList /></NLayoutContent
+  ></NLayout>
 </template>

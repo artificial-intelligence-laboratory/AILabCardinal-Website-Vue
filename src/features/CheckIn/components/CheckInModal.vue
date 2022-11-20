@@ -20,11 +20,7 @@ const options: SelectMixedOption[] = [
 
 <template>
   <NModal v-model:show="isDialogOpen">
-    <NCard
-      class="w-[22rem] rounded-3xl"
-      :bordered="false"
-      role="dialog"
-      aria-modal="true">
+    <NCard class="w-[22rem]" role="dialog" aria-modal="true">
       <template #header
         ><h2 class="text-center font-ysbth text-lg">实验室签到</h2></template
       >

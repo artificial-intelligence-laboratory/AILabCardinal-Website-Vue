@@ -25,10 +25,13 @@ const menuItems: HomePageMenuItemProps[] = [
 ]
 </script>
 <template>
-  <ul class="grid grid-cols-5 gap-5">
-    <HomePageMenuItem
+  <NGrid :cols="5" :x-gap="20" :y-gap="20">
+    <NGi
+      class="aspect-square last:aspect-auto"
       v-for="(item, index) in menuItems"
       :key="index"
-      v-bind="item"
-  /></ul>
+      :span="index === menuItems.length - 1 ? 3 : 1">
+      <HomePageMenuItem v-bind="item"
+    /></NGi>
+  </NGrid>
 </template>

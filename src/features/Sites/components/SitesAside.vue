@@ -14,13 +14,13 @@ const siteItems = [
 </script>
 
 <template>
-  <ElAside class="p-4" width="12.5rem">
-    <ElCard shadow="hover">
-      <ElSpace class="w-full" fill direction="vertical">
+  <NLayoutSider width="12rem">
+    <NCard hoverable>
+      <NSpace vertical>
         <SitesAsideItem v-for="(item, index) in siteItems" :key="index">{{
           item.name
         }}</SitesAsideItem>
-      </ElSpace></ElCard
+      </NSpace></NCard
     >
-  </ElAside>
+  </NLayoutSider>
 </template>

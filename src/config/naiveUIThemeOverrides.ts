@@ -18,12 +18,16 @@ const naiveUIThemeOverrides: GlobalThemeOverrides = {
   Button: {
     color: colors.white,
     colorHover: '#eaebee',
-    textColorHover: primaryColor
+    textColorHover: primaryColor,
+    textColorFocus: primaryColor
   },
   Layout: {
     color: colors.transparent,
+    textColor: primaryColor,
     headerColor: colors.transparent
-  }
+  },
+  PageHeader: { titleTextColor: primaryColor },
+  Card: { textColor: primaryColor }
 }
 
 export default naiveUIThemeOverrides

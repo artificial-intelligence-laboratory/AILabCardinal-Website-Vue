@@ -10,17 +10,13 @@ withDefaults(defineProps<HomePageMenuItemProps>(), { path: '' })
 </script>
 
 <template>
-  <li class="relative aspect-square last:col-span-3 last:aspect-auto">
-    <RouterLink :to="path">
-      <NCard class="menuItem" hoverable>
-        <NImage :src="iconSrc" :alt="name" width="48" />
-        <p class="font-ysbth text-2xl">{{ name }}</p>
-        <p v-if="isDeveloping" class="absolute bottom-[10%] text-sm"
-          >正在开发</p
-        >
-      </NCard></RouterLink
-    >
-  </li>
+  <RouterLink class="relative h-full" :to="path">
+    <NCard class="menuItem" hoverable>
+      <NImage :src="iconSrc" :alt="name" width="48" />
+      <p class="font-ysbth text-2xl">{{ name }}</p>
+      <p v-if="isDeveloping" class="absolute bottom-[10%] text-sm">正在开发</p>
+    </NCard></RouterLink
+  >
 </template>
 
 <style scoped>

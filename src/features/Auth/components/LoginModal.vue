@@ -33,11 +33,7 @@ const handleSubmit = async () => {
 
 <template>
   <NModal v-model:show="isDialogOpen">
-    <NCard
-      class="w-[22rem] rounded-3xl text-center"
-      :bordered="false"
-      role="dialog"
-      aria-modal="true">
+    <NCard class="w-[22rem] text-center" role="dialog" aria-modal="true">
       <p class="text-lg">模式识别与人工智能实验室</p>
       <p class="break-normal text-xs"
         >(AILab) Pattern Recognition and artificial intelligence Laboratory</p
