@@ -27,7 +27,10 @@ const naiveUIThemeOverrides: GlobalThemeOverrides = {
     headerColor: colors.transparent
   },
   PageHeader: { titleTextColor: primaryColor },
-  Card: { textColor: primaryColor }
+  Card: { textColor: primaryColor },
+  Typography: {
+    textColor: primaryColor
+  }
 }
 
 export default naiveUIThemeOverrides

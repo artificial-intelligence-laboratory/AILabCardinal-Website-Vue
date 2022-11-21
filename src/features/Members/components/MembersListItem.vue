@@ -17,9 +17,9 @@ import { collegeManAvatar } from '../assets'
           <p class="text-xs">2020级 Java后端</p>
         </div>
       </div>
-      <a class="my-auto" href="https://github.com">
+      <NA class="my-auto" href="https://github.com">
         <GithubOne fill="white" size="32" />
-      </a>
+      </NA>
     </NCard>
   </li>
 </template>

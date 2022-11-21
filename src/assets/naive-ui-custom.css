@@ -29,3 +29,7 @@
 .n-avatar {
   @apply flex-shrink-0;
 }
+
+.n-ellipsis.n-ellipsis--line-clamp {
+  transition: color 0.3s var(--n-bezier);
+}

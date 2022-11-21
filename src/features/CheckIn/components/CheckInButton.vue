@@ -7,7 +7,7 @@ const [isDialogOpen, toggle] = useToggle()
 
 <template>
   <CheckInModal v-model="isDialogOpen" />
-  <NButton size="large" @click="toggle">
+  <NButton size="large" @click="toggle()">
     <p class="font-ysbth font-normal text-base">实验室签到</p>
   </NButton>
 </template>

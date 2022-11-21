@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../features/Home/components/HomePage.vue'
-import SitesPageVue from '@/features/Sites/components/SitesPage.vue'
+import SitesPage from '@/features/Sites/components/SitesPage.vue'
 import MembersPage from '@/features/Members/components/MembersPage.vue'
 
 const router = createRouter({
@@ -12,8 +12,8 @@ const router = createRouter({
       component: HomePage
     },
     {
-      path: '/sites',
-      component: SitesPageVue,
+      path: '/sites/:siteTypeCode(\\d+)?',
+      component: SitesPage,
       meta: {
         title: '导航',
         subTitle: 'site navigation'

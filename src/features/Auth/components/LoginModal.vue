@@ -2,6 +2,7 @@
 import useAuthStore from '../stores/useAuthStore'
 import loginFormRules from '../utils/loginFormRules'
 import useFormRef from '@/shared/hooks/useFormRef'
+import useResetReactive from '@/shared/hooks/useResetReactive'
 import { useLogin } from '../api'
 import type { LoginDTO } from '../api/types'
 
@@ -9,7 +10,7 @@ const auth = useAuthStore()
 
 const isDialogOpen = computed(() => !auth.isLoggedIn)
 
-const loginFormModel = reactive<LoginDTO>({
+const [loginFormModel, reset] = useResetReactive<LoginDTO>({
   studentNumber: '',
   password: ''
 })
@@ -24,8 +25,7 @@ const handleSubmit = async () => {
   await loginFormRef.value.validate(async errors => {
     if (!errors) {
       await loginMutation.mutateAsync(loginFormModel)
-      loginFormModel.studentNumber = ''
-      loginFormModel.password = ''
+      reset()
     }
   })
 }

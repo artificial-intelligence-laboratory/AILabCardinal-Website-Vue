@@ -4,10 +4,10 @@ import backIcon from './back.png'
 
 <template>
   <NLayoutHeader>
-    <NPageHeader @back="$router.back">
+    <NPageHeader @back="$router.push('/')">
       <template #back>
         <NButton class="h-12 w-12 p-0">
-          <NImage :src="backIcon" width="32" />
+          <NImage :src="backIcon" preview-disabled width="32" />
         </NButton>
       </template>
       <template #title>
