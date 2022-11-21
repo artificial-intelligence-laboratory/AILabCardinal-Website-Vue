@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
-import type { SelectMixedOption } from 'naive-ui/es/select/src/interface'
 import CheckInFormLabel from './CheckInFormLabel.vue'
+import useCheckInForm from '../hooks/useCheckInForm'
 
 const props = defineProps<{
   modelValue: boolean
@@ -11,11 +11,13 @@ const emit = defineEmits(['update:modelValue'])
 
 const isDialogOpen = useVModel(props, 'modelValue', emit)
 
-const selectModel = ref('3.5')
-
-const options: SelectMixedOption[] = [
-  { label: '默认（3.5~4h后自动签退）', value: '3.5' }
-]
+const {
+  checkInFormRef,
+  checkInFormModel,
+  handleSubmit,
+  selectOptions,
+  isLoading
+} = useCheckInForm()
 </script>
 
 <template>
@@ -24,29 +26,43 @@ const options: SelectMixedOption[] = [
       <template #header
         ><h2 class="text-center font-ysbth text-lg">实验室签到</h2></template
       >
-      <NForm class="checkInForm" size="large">
+      <NForm
+        ref="checkInFormRef"
+        class="checkInForm"
+        :model="checkInFormModel"
+        size="large"
+        @submit.prevent="handleSubmit">
         <NFormItem>
           <template #label>
             <CheckInFormLabel>任务</CheckInFormLabel>
           </template>
 
-          <NInput type="textarea" placeholder="输入任务" />
+          <NInput
+            v-model:value="checkInFormModel.task"
+            type="textarea"
+            placeholder="输入任务" />
         </NFormItem>
         <NFormItem>
           <template #label>
             <CheckInFormLabel>备注</CheckInFormLabel>
           </template>
-          <NInput type="textarea" placeholder="输入备注" />
+          <NInput
+            v-model:value="checkInFormModel.remark"
+            type="textarea"
+            placeholder="输入备注" />
         </NFormItem>
         <NFormItem>
           <template #label>
             <CheckInFormLabel>签退时间</CheckInFormLabel>
           </template>
-          <NSelect v-model:value="selectModel" :options="options" />
+          <NSelect
+            v-model:value="checkInFormModel.checkOutTime"
+            :options="selectOptions" />
         </NFormItem>
         <NFormItem :show-label="false">
           <NButton
             class="w-full"
+            :loading="isLoading"
             type="primary"
             size="large"
             round

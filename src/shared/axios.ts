@@ -1,5 +1,5 @@
 import useAuthStore from '@/features/Auth/stores/useAuthStore'
-import Axios, { AxiosError, type AxiosRequestConfig } from 'axios'
+import Axios, { type AxiosError, type AxiosRequestConfig } from 'axios'
 import env from './env'
 
 const authRequestInterceptor = (config: AxiosRequestConfig) => {
@@ -7,7 +7,7 @@ const authRequestInterceptor = (config: AxiosRequestConfig) => {
 
   if (auth.loginInfo && config.headers) {
     Object.assign(config.headers, {
-      Authorization: `Bearer ${auth.loginInfo.token}`
+      Authorization: auth.loginInfo.token
     })
   }
 
