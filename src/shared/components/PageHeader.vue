@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import UserInfoItem from '@/features/Members/components/UserInfoItem.vue'
 import backIcon from './back.png'
 </script>
 
 <template>
-  <NLayoutHeader>
+  <NLayoutHeader class="flex justify-between">
     <NPageHeader @back="$router.push('/')">
       <template #back>
         <NButton class="h-12 w-12 p-0">
@@ -17,6 +18,7 @@ import backIcon from './back.png'
         </p></template
       >
     </NPageHeader>
+    <UserInfoItem />
   </NLayoutHeader>
 </template>
 

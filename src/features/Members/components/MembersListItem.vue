@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { GithubOne } from '@icon-park/vue-next'
 import { collegeManAvatar } from '../assets'
+import type { Member } from '../api/types'
+
+defineProps<{ member: Member; avatar?: string }>()
 </script>
 
 <template>
@@ -11,10 +14,12 @@ import { collegeManAvatar } from '../assets'
           round
           class="ring ring-primary"
           :size="48"
-          :src="collegeManAvatar" />
+          :src="avatar ?? collegeManAvatar" />
         <div>
-          <p class="text-base">成员姓名</p>
-          <p class="text-xs">2020级 Java后端</p>
+          <p class="text-base">{{ member.realName }}</p>
+          <p class="text-xs"
+            >{{ member.grade }} {{ member.developmentDirection }}</p
+          >
         </div>
       </div>
       <NA class="my-auto" href="https://github.com">
