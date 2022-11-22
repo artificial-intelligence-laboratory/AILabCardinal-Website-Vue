@@ -3,6 +3,7 @@ import useFormRef from '@/shared/hooks/useFormRef'
 import useResetReactive from '@/shared/hooks/useResetReactive'
 import { useCheckIn } from '../api'
 import type { CheckInDTO } from '../api/types'
+import useCheckOutTimeStore from './useCheckOutTimeStore'
 
 const selectOptions: SelectMixedOption[] = [
   { label: '默认（3.5~4h后自动签退）', value: '4' },
@@ -12,12 +13,18 @@ const selectOptions: SelectMixedOption[] = [
   { label: '8h后自动签退）', value: '8' }
 ]
 
-export const useCheckInForm = () => {
+interface UseCheckInFormProps {
+  onSuccess?: () => void
+}
+
+export const useCheckInForm = ({ onSuccess }: UseCheckInFormProps = {}) => {
   const [checkInFormModel, reset] = useResetReactive<CheckInDTO>({
     task: '',
     remark: '',
     checkOutTime: selectOptions[0].value as string
   })
+
+  const checkOutTimeStore = useCheckOutTimeStore()
 
   const checkInFormRef = useFormRef()
 
@@ -29,7 +36,11 @@ export const useCheckInForm = () => {
     await checkInFormRef.value.validate(async errors => {
       if (!errors) {
         await checkInMutation.mutateAsync(checkInFormModel)
+
+        checkOutTimeStore.checkOutTime = Number(checkInFormModel.checkOutTime)
+
         reset()
+        onSuccess?.()
       }
     })
   }

@@ -29,6 +29,7 @@ export const useSites = (siteTypeCode: MaybeRef<SiteTypeCode>) => {
   const query = useQuery(
     reactiveComputed(() => ({
       ...sitesKeys.show(unref(siteTypeCode)),
+      staleTime: Infinity,
       enabled: auth.isLoggedIn
     }))
   )

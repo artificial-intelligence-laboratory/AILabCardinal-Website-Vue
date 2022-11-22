@@ -8,9 +8,6 @@ export const useCheckIn = () => {
   const mutation = useMutation({
     mutationFn(params: CheckInDTO) {
       return axios.post(USER_API_PATH + '/signIn', params)
-    },
-    onSuccess(data) {
-      console.log({ data })
     }
   })
 

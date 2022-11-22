@@ -21,10 +21,16 @@ const axios = Axios.create({
 axios.interceptors.request.use(authRequestInterceptor)
 axios.interceptors.response.use(
   response => {
-    if (response.data.code !== 1) {
-      window.$message.error(response.data.msg)
+    const data = response.data
 
-      return Promise.reject(response.data)
+    if (data.code === 1) {
+      if (typeof data.data === 'string') {
+        window.$message.info(data.data)
+      }
+    } else {
+      window.$message.error(data.msg)
+
+      return Promise.reject(data)
     }
 
     return response.data.data

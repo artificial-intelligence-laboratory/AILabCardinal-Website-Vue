@@ -17,7 +17,11 @@ const {
   handleSubmit,
   selectOptions,
   isLoading
-} = useCheckInForm()
+} = useCheckInForm({
+  onSuccess() {
+    isDialogOpen.value = false
+  }
+})
 </script>
 
 <template>
