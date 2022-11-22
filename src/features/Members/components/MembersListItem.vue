@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { GithubOne } from '@icon-park/vue-next'
 import { collegeManAvatar } from '../assets'
 import type { Member } from '../api/types'
+import GithubLink from './GithubLink.vue'
 
 defineProps<{ member: Member; avatar?: string }>()
 </script>
@@ -22,9 +22,7 @@ defineProps<{ member: Member; avatar?: string }>()
           >
         </div>
       </div>
-      <NA class="my-auto" href="https://github.com">
-        <GithubOne fill="white" size="32" />
-      </NA>
+      <GithubLink :href="member.githubUrl" />
     </NCard>
   </li>
 </template>
@@ -32,8 +30,5 @@ defineProps<{ member: Member; avatar?: string }>()
 <style scoped>
 .listItem > :deep(.n-card__content) {
   @apply flex justify-between py-2.5 px-4;
-}
-.listItem :deep(.i-icon > svg) {
-  @apply rounded-full bg-primary p-1;
 }
 </style>

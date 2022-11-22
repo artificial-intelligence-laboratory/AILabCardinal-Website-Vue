@@ -1,6 +1,7 @@
 export interface Member {
   classNumber: number
   developmentDirection: string
+  githubUrl: string
   grade: string
   realName: string
   userInfoId: number

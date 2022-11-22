@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import UserInfoItem from '@/features/Members/components/UserInfoItem.vue'
+import UserInfoItem from '@/features/Members/components/UserInfoCard.vue'
 import backIcon from './back.png'
 </script>
 

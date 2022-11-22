@@ -6,6 +6,7 @@ export interface LoginDTO {
 export interface UserData {
   userId: number
   studentNumber: string
+  githubUrl: string
   email: string
   avatar: string
   nickname: string

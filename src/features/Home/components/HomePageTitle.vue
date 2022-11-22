@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import UserInfoItem from '@/features/Members/components/UserInfoItem.vue'
+import UserInfoCard from '@/features/Members/components/UserInfoCard.vue'
 </script>
 
 <template>
@@ -11,6 +11,6 @@ import UserInfoItem from '@/features/Members/components/UserInfoItem.vue'
         cardinal</p
       ></div
     >
-    <UserInfoItem
+    <UserInfoCard
   /></NSpace>
 </template>

@@ -21,6 +21,7 @@ const axios = Axios.create({
 axios.interceptors.request.use(authRequestInterceptor)
 axios.interceptors.response.use(
   response => {
+    const auth = useAuthStore()
     const data = response.data
 
     if (data.code === 1) {
@@ -29,6 +30,10 @@ axios.interceptors.response.use(
       }
     } else {
       window.$message.error(data.msg)
+
+      if (data.code === 401) {
+        auth.loginInfo = null
+      }
 
       return Promise.reject(data)
     }
