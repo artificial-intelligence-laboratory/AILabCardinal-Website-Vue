@@ -1,5 +1,5 @@
+import Axios, { AxiosError, type AxiosRequestConfig } from 'axios'
 import useAuthStore from '@/features/Auth/stores/useAuthStore'
-import Axios, { type AxiosError, type AxiosRequestConfig } from 'axios'
 import env from './env'
 
 const authRequestInterceptor = (config: AxiosRequestConfig) => {
@@ -29,19 +29,16 @@ axios.interceptors.response.use(
         window.$message.info(data.data)
       }
     } else {
-      window.$message.error(data.msg)
-
       if (data.code === 401) {
         auth.loginInfo = null
       }
 
-      return Promise.reject(data)
+      return Promise.reject(new AxiosError(data.msg, data.code))
     }
 
     return response.data.data
   },
   (error: AxiosError) => {
-    window.$message.error(error.message)
     return Promise.reject(error)
   }
 )
