@@ -5,7 +5,7 @@ import { useCheckIn } from '../api'
 import type { CheckInDTO } from '../api/types'
 
 const selectOptions: SelectMixedOption[] = [
-  { label: '默认（3.5~4h后自动签退）', value: '4' },
+  { label: '默认', value: '4' },
   { label: '5h后自动签退）', value: '5' },
   { label: '6h后自动签退）', value: '6' },
   { label: '7h后自动签退）', value: '7' },
