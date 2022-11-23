@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import useRequireAuth from './features/Auth/hooks/useRequireAuth'
 import naiveUIThemeOverrides from './config/naiveUIThemeOverrides'
-import AppMessageProvider from '@/shared/components/AppMessageProvider'
+import AppMessageProvider from '@/shared/components/AppMessageProvider.vue'
+import useQueryDefaultOptions from './config/useQueryDefaultOptions'
 
 useRequireAuth()
+useQueryDefaultOptions()
 </script>
 
 <template>

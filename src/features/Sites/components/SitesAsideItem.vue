@@ -1,27 +1,27 @@
 <script setup lang="ts">
 import useSiteTypeCode from '../hooks/useSiteTypeCode'
+import type { SiteLabelData } from '../api/types'
 
 export interface SiteItemProps {
-  name: string
-  siteTypeCode: string
+  siteLabel: SiteLabelData
 }
 
 const props = defineProps<SiteItemProps>()
-const currentSiteTypeCode = useSiteTypeCode()
+const siteTypeCode = useSiteTypeCode()
 
 const isActive = computed(
-  () => currentSiteTypeCode.value === props.siteTypeCode
+  () => siteTypeCode.value === props.siteLabel.siteTypeCode
 )
 </script>
 
 <template>
-  <RouterLink :to="`/sites/${siteTypeCode}`">
+  <RouterLink :to="`/sites/${siteLabel.siteTypeCode}`">
     <NButton
       class="w-full"
       :type="isActive ? 'primary' : 'tertiary'"
       :bordered="isActive"
       size="large"
-      >{{ name }}</NButton
+      >{{ siteLabel.siteType }}</NButton
     ></RouterLink
   >
 </template>

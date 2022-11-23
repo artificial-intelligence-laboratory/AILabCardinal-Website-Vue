@@ -10,8 +10,8 @@ const { data: sitesData } = useSites(siteTypeCode)
 <template>
   <NCard size="small">
     <NGrid
+      v-if="sitesData?.length"
       class="flex flex-wrap"
-      v-if="sitesData"
       :cols="5"
       :x-gap="6"
       :y-gap="6">
@@ -19,8 +19,8 @@ const { data: sitesData } = useSites(siteTypeCode)
         <SitesListItem :site="item"
       /></NGi>
     </NGrid>
-    <div class="grid min-h-[20rem] place-items-center" v-else>
+    <main v-else class="grid h-full place-items-center">
       <NEmpty size="large" description="这个网站类型还没有录入任何网站" />
-    </div>
+    </main>
   </NCard>
 </template>

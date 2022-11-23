@@ -1,10 +1,9 @@
 import { useRouteParams } from '@vueuse/router'
-import siteItems from '../utils/siteItems'
 
 const useSiteTypeCode = () => {
   const siteTypeCode = useRouteParams<string>('siteTypeCode')
 
-  return computed(() => siteTypeCode.value || siteItems[0].siteTypeCode)
+  return computed(() => Number(siteTypeCode.value) || 1)
 }
 
 export default useSiteTypeCode

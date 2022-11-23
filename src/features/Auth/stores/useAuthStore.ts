@@ -14,6 +14,14 @@ const useAuthStore = defineStore(LOGIN_INFO_STORE_KEY, () => {
 
   const isLoggedIn = computed(() => isDefined(loginInfo))
 
+  const router = useRouter()
+
+  watchEffect(() => {
+    if (!isLoggedIn.value) {
+      router.replace('/')
+    }
+  })
+
   return {
     loginInfo,
     isLoggedIn

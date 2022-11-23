@@ -4,3 +4,10 @@ export interface SiteData {
   siteUrl: string
   siteIntro: string
 }
+
+export interface SiteLabelData {
+  siteType: string
+  siteTypeCode: number
+  siteTypeId: number
+  siteTypeShowSerialNumber: number
+}

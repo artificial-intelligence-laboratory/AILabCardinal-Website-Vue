@@ -1,7 +1,6 @@
 import { reactiveComputed, type MaybeRef } from '@vueuse/core'
 import { useQuery } from '@tanstack/vue-query'
 import { createQueryKeys } from '@lukemorales/query-key-factory'
-import useAuthStore from '@/features/Auth/stores/useAuthStore'
 import axios from '@/shared/axios'
 import type { Member, MembersData } from './types'
 
@@ -25,13 +24,10 @@ const membersKeys = createQueryKeys('members', {
 })
 
 export const useMembers = () => {
-  const auth = useAuthStore()
-
   const query = useQuery(
     reactiveComputed(() => ({
       ...membersKeys.all(),
-      staleTime: Infinity,
-      enabled: auth.isLoggedIn
+      staleTime: Infinity
     }))
   )
 
@@ -39,13 +35,10 @@ export const useMembers = () => {
 }
 
 export const useMember = (userInfoId: MaybeRef<Member['userInfoId']>) => {
-  const auth = useAuthStore()
-
   const query = useQuery(
     reactiveComputed(() => ({
       ...membersKeys.show(unref(userInfoId)),
-      staleTime: Infinity,
-      enabled: auth.isLoggedIn
+      staleTime: Infinity
     }))
   )
 

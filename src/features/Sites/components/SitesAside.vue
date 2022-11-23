@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import SitesAsideItem from './SitesAsideItem.vue'
-import siteItems from '../utils/siteItems'
+import { useSiteLabels } from '../api'
+
+const { data: siteLabels } = useSiteLabels()
 </script>
 
 <template>
   <NCard class="h-min w-48" size="small" hoverable>
     <NSpace vertical>
       <SitesAsideItem
-        v-for="(item, index) in siteItems"
-        :key="index"
-        v-bind="item" /></NSpace
+        v-for="siteLabel in siteLabels"
+        :key="siteLabel.siteTypeId"
+        :site-label="siteLabel" /></NSpace
   ></NCard>
 </template>
