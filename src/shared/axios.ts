@@ -36,7 +36,7 @@ axios.interceptors.response.use(
       return Promise.reject(new AxiosError(data.msg, data.code))
     }
 
-    return response.data.data
+    return response.data.data ?? {}
   },
   (error: AxiosError) => {
     return Promise.reject(error)
